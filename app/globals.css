@@ -3,25 +3,94 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --lightRed: hsl(0, 100%, 67%);
+  --orangeyYellow: hsl(39, 100%, 56%);
+  --greenTeal: hsl(166, 100%, 37%);
+  --cobaltBlue: hsl(234, 85%, 45%);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  /* Gradients */
+  --lightSlateBlue: hsl(252, 100%, 67%); /* (background) */
+  --lightRoyalBlue: hsl(241, 81%, 54%); /* (background) */
+
+  --violetBlue: hsla(256, 72%, 46%, 1); /* (circle) */
+  --persianBlue: hsla(241, 72%, 46%, 0); /* (circle) */
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --paleBlue: hsl(221, 100%, 96%);
+  --lightLavender: hsl(241, 100%, 89%);
+  --darkGrayBlue: hsl(224, 30%, 27%);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply flex flex-col justify-center items-center min-h-screen text-[18px] bg-[--white]
+}
+
+.main {
+  @apply min-w-[375px] max-w-[1440px] mx-auto flex flex-col md:flex-row shadow-2xl md:rounded-[2rem] bg-white w-full md:w-auto
+}
+
+.leftSide {
+  @apply bg-gradient-to-b from-[--lightSlateBlue] to-[--lightRoyalBlue] rounded-b-[2rem] md:rounded-[2rem] h-auto md:w-80 flex flex-col items-center
+  py-8 space-y-10
+}
+
+.leftHeading {
+  @apply font-bold text-[--paleBlue]
+}
+
+.leftCircle {
+  @apply rounded-full font-bold h-auto w-40 p-10 bg-gradient-to-b from-[--violetBlue] to-[--persianBlue] text-center
+}
+
+.leftScore {
+  @apply text-6xl text-[--paleBlue]
+}
+
+.leftScoreFinal {
+  @apply text-sm text-[--lightLavender]
+}
+
+.leftBodyText {
+  @apply text-center w-60
+}
+
+.leftBodyHeading {
+  @apply font-bold text-[--paleBlue] text-2xl
+}
+
+.leftBodyParagraph {
+  @apply text-[--lightLavender] text-base mt-2
+}
+
+.rightSide {
+  @apply px-10 py-8 rounded-r-xl h-auto md:w-80 space-y-6
+}
+
+.rightHeading {
+  @apply text-[--darkGrayBlue] font-bold
+}
+
+.list {
+  @apply space-y-3
+}
+
+.listBody {
+  @apply flex items-center justify-between w-full
+}
+
+.listBodyLeft {
+  @apply flex flex-row space-x-2
+}
+
+.listBodyRight {
+  @apply flex flex-row
+}
+
+.summaryText {
+  @apply text-[--lightLavender]
+}
+
+.summaryButton {
+  @apply w-full p-2 bg-[--darkGrayBlue] text-white hover:bg-gradient-to-b from-[--lightSlateBlue] to-[--lightRoyalBlue] rounded-full transition-all
 }
