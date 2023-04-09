@@ -30,7 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 ### Links
-- Live Site URL : [QR Code Component](https://qr-code-component-ten-beta.vercel.app/)
+- Live Site URL : [Result Summary Component](https://results-summary-component-dun.vercel.app/)
 
 ## Repository's
 
